@@ -5,7 +5,7 @@ const Dimension = new Schema(
     {
       x: { type: Number, required: true },
       y: { type: Number, required: true },
-      z: { type: Number, default: 0 },     
+      z: { type: Number, required: true },     
     },
     { _id: false}
   );
