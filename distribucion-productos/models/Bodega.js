@@ -7,19 +7,20 @@ const Bodega = new Schema(
   {
     codigo: { type: String, required: true, unique: true },
     nombre: { type: String, required: true, unique: true },
-    secciones: [
-      {
-      nombre: { type: String, required: true },
-      dimension: Dimension.schema
-      }
-    ],
-    productos: [
+    dimension: Dimension.schema,
+    coordenadas: [
       {
         _id: false,
-        producto: { type: mongoose.Schema.Types.ObjectId, ref: "Producto" },
-        cantidad: { type: Number, required: true },
-        coordenadas: Dimension.schema,
-        observacion: { type: String },
+        nombre: { type: String, required: true },
+        ubicacion: Dimension.schema,
+        productos: [
+          {
+            _id: false,
+            producto: { type: mongoose.Schema.Types.ObjectId, ref: "Producto" },
+            cantidad: { type: Number, required: true },
+            observacion: { type: String },
+          },
+        ],
       },
     ],
     estado: { type: Number, default: 1 },
