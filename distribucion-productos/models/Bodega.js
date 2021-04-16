@@ -7,7 +7,7 @@ const Bodega = new Schema(
   {
     codigo: { type: String, required: true, unique: true },
     nombre: { type: String, required: true, unique: true },
-    dimension: [Dimension.schema],
+    dimensiones: [Dimension.schema],
     productos: [
       {
         _id: false,
