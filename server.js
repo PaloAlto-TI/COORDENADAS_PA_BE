@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 app.use(express.json());
 app.use(require("./distribucion-productos/routes/producto.routers"));
 app.use(require("./distribucion-productos/routes/bodega.routers"));
-
+app.use(require("./Usuarios/routes/usuario.routers"));
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`)

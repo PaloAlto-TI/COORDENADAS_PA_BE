@@ -6,6 +6,8 @@ productoCTRL.getProductos = async (req, res) => {
     res.json(productos);
 };
 
+
+
 productoCTRL.getProducto = async (req, res) => {
     const producto = await Producto.findById(req.params.id);
     res.json(producto);

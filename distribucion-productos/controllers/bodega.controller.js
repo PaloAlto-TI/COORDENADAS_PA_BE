@@ -23,7 +23,7 @@ bodegaCTRL.updateBodega = async (req, res) => {
     
     const bodega = await Bodega.findByIdAndUpdate(req.params.id, { $set: new Bodega(req.body) }, { new: true });
     res.json(bodega);
-
+    
 };
 
 module.exports = bodegaCTRL;
