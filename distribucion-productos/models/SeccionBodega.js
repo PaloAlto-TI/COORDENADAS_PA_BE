@@ -12,6 +12,7 @@ const SeccionBodega = new Schema(
           {
             _id: false,
             producto: { type: mongoose.Schema.Types.ObjectId, ref: "Producto" },
+            codigo: { type: String, required: true },
             cantidad: { type: Number, required: true },
             observacion: { type: String },
           },
