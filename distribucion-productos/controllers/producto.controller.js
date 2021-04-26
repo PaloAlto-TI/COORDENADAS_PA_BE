@@ -32,4 +32,23 @@ productoCTRL.deleteProducto = async (req, res) => {
 
 };
 
+productoCTRL.findProducto= async (req, res) => {
+  
+    const encontrado = await Producto.findOne({codigo:req.body.codigo});
+    
+    if(!encontrado){
+      const producto = new Producto(req.body);
+      await producto.save();
+      res.json(
+         producto
+      );
+    }else{
+      res.json(
+        encontrado
+     );
+    }
+  
+   
+  };
+
 module.exports = productoCTRL;
